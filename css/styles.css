@@ -1,22 +1,39 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-    color: #333;
+/* Variables de colores basados en la paleta propuesta */
+:root {
+    --primary-color: #008CFF;       /* Azul Brillante */
+    --secondary-color: #FFDD00;     /* Amarillo Energético */
+    --background-color: #F2F2F2;      /* Gris Claro */
+    --text-color: #222222;          /* Negro Carbón */
+    --white: #FFFFFF;               /* Blanco Limpio */
+    --accent-color: #4DE5C2;        /* Verde Menta */
+    --btn-hover: #007ACC;           /* Versión oscurecida del Azul Brillante */
   }
   
+  /* Reset global */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Estilos globales */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  /* Header */
   header {
-    background-color: #002b55;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: 20px;
     text-align: center;
   }
   
   nav ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
   }
   
   nav ul li {
@@ -25,38 +42,274 @@ body {
   }
   
   nav ul li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
+    transition: color 0.3s ease;
   }
   
+  nav ul li a:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Sección Hero */
   .hero {
-    background: #e6ecf2;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     padding: 50px;
     text-align: center;
+    color: var(--white);
+  }
+  
+  .hero h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
   }
   
   .hero .btn {
     display: inline-block;
-    margin-top: 20px;
     padding: 10px 20px;
-    background-color: #002b55;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero .btn:hover {
+    background-color: var(--btn-hover);
+  }
+  
+  /* Slider */
+  .slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 40px auto;
+  }
+  
+  .slider .slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .slider .slide {
+    min-width: 100%;
+    position: relative;
+  }
+  
+  .slider .slide img {
+    width: 100%;
+    display: block;
+  }
+  
+  .slider .slide .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: var(--white);
+    background-color: rgba(0,0,0,0.5);
+    padding: 10px;
     border-radius: 5px;
   }
   
+  /* Botones de navegación del slider */
+  .slider .prev,
+  .slider .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: var(--white);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .slider .prev { left: 10px; }
+  .slider .next { right: 10px; }
+  
+  /* Sección de Episodios */
   .episodios {
     padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .episodios h3 {
+    text-align: center;
+    margin-bottom: 20px;
   }
   
   .episodio {
     margin-bottom: 30px;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
   
+  .episodio h4 {
+    margin-bottom: 10px;
+  }
+  
+  .episodio p {
+    margin-bottom: 10px;
+  }
+  
+  /* Custom Audio Player */
+  .custom-audio {
+    margin-top: 10px;
+  }
+  .custom-audio audio {
+    display: none; /* Ocultamos el control nativo */
+  }
+  .custom-audio button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .custom-audio button:hover {
+    background-color: var(--btn-hover);
+  }
+  
+  /* Sección Blog / Noticias */
+  .blog {
+    background-color: var(--white);
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 1200px;
+  }
+  .blog h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .blog .post {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .blog .post h4 {
+    margin-bottom: 10px;
+  }
+  .blog .post p {
+    margin-bottom: 10px;
+  }
+  
+  /* Sección Testimonios */
+  .testimonios {
+    background-color: var(--background-color);
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+  }
+  .testimonios h3 {
+    margin-bottom: 20px;
+  }
+  .testimonios .testimonial {
+    margin-bottom: 20px;
+    font-style: italic;
+  }
+  
+  /* Sección Sobre Nosotros */
+  .sobre-nosotros {
+    background-color: var(--white);
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+  }
+  .sobre-nosotros h3 {
+    margin-bottom: 20px;
+  }
+  .sobre-nosotros p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+  }
+  .sobre-nosotros .social-media a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  .sobre-nosotros .social-media a:hover {
+    color: var(--accent-color);
+  }
+  
+  /* Sección de Contacto */
+  .contacto {
+    background-color: var(--white);
+    padding: 40px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  .contacto h3 {
+    text-align: center;
+  }
+  .contacto form {
+    display: flex;
+    flex-direction: column;
+  }
+  .contacto label {
+    margin-top: 10px;
+  }
+  .contacto input,
+  .contacto textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+  }
+  .contacto button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .contacto button:hover {
+    background-color: var(--btn-hover);
+  }
+  
+  /* Footer */
   footer {
-    background-color: #002b55;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     text-align: center;
     padding: 15px;
+    font-size: 0.9em;
+  }
+  
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    nav ul li {
+      display: block;
+      margin: 10px 0;
+    }
+    
+    .hero {
+      padding: 30px;
+    }
+    
+    .episodios {
+      padding: 20px;
+    }
   }
   

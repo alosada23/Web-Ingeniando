@@ -7,37 +7,122 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-
   <header>
     <h1>Ingeniando Podcast</h1>
     <nav>
       <ul>
         <li><a href="#">Inicio</a></li>
-        <li><a href="#">Episodios</a></li>
-        <li><a href="#">Sobre Nosotros</a></li>
-        <li><a href="#">Contacto</a></li>
+        <li><a href="#episodios">Episodios</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
+        <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
+    <!-- Sección Hero -->
     <section class="hero">
       <h2>Historias reales. Ingeniería con alma.</h2>
       <p>El podcast que conecta a jóvenes ingenieros con el mundo real.</p>
-      <a href="#" class="btn">Escucha el último episodio</a>
+      <a href="#episodios" class="btn">Escucha el último episodio</a>
     </section>
 
-    <section class="episodios">
+    <!-- Sección Slider: Episodios Destacados -->
+    <section class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="img/slider1.jpg" alt="Episodio Destacado 1">
+          <div class="caption">Episodio Destacado 1</div>
+        </div>
+        <div class="slide">
+          <img src="img/slider2.jpg" alt="Episodio Destacado 2">
+          <div class="caption">Episodio Destacado 2</div>
+        </div>
+        <div class="slide">
+          <img src="img/slider3.jpg" alt="Episodio Destacado 3">
+          <div class="caption">Episodio Destacado 3</div>
+        </div>
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </section>
+
+    <!-- Sección de Episodios -->
+    <section class="episodios" id="episodios">
       <h3>Últimos Episodios</h3>
       <div class="episodio">
         <h4>Episodio 6: Judith García Galiana (3M)</h4>
         <p>Liderazgo, mentalidad y carrera en el mundo corporativo.</p>
-        <audio controls>
-          <source src="ruta-del-audio.mp3" type="audio/mpeg">
-          Tu navegador no soporta audio HTML5.
-        </audio>
+        <!-- Reproductor de audio personalizado -->
+        <div class="custom-audio">
+          <audio src="ruta-del-audio.mp3"></audio>
+          <button class="play">Play</button>
+          <button class="pause">Pause</button>
+        </div>
       </div>
       <!-- Agrega más episodios aquí -->
+    </section>
+
+    <!-- Sección Blog / Noticias -->
+    <section class="blog" id="blog">
+      <h3>Blog / Noticias</h3>
+      <div class="post">
+        <h4>Noticia 1: Innovación en Ingeniería</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        <a href="#">Leer más</a>
+      </div>
+      <div class="post">
+        <h4>Noticia 2: Tecnología y Futuro</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+        <a href="#">Leer más</a>
+      </div>
+      <!-- Agrega más posts aquí -->
+    </section>
+
+    <!-- Sección Testimonios -->
+    <section class="testimonios" id="testimonios">
+      <h3>Testimonios</h3>
+      <div class="testimonial">
+        <p>"Este podcast me inspiró a seguir mi carrera en ingeniería."</p>
+        <p>- Usuario 1</p>
+      </div>
+      <div class="testimonial">
+        <p>"La calidad de los episodios es excelente y muy educativa."</p>
+        <p>- Usuario 2</p>
+      </div>
+      <!-- Agrega más testimonios aquí -->
+    </section>
+
+    <!-- Sección Sobre Nosotros -->
+    <section class="sobre-nosotros" id="sobre-nosotros">
+      <h3>Sobre Nosotros</h3>
+      <p>
+        En Ingeniando Podcast creemos en el poder de la ingeniería y la innovación. Conectamos con profesionales y compartimos historias inspiradoras de éxito y superación. ¡Únete a nuestra comunidad!
+      </p>
+      <div class="social-media">
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+      </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section class="contacto" id="contacto">
+      <h3>Contacto</h3>
+      <form id="contactForm">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
     </section>
   </main>
 
