@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+  
+  header {
+    background-color: #002b55;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .hero {
+    background: #e6ecf2;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .hero .btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #002b55;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .episodios {
+    padding: 40px;
+  }
+  
+  .episodio {
+    margin-bottom: 30px;
+  }
+  
+  footer {
+    background-color: #002b55;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  
